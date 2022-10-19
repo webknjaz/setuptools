@@ -143,6 +143,10 @@ jobs:
             Py-${{
               steps.python-install.outputs.python-version
             }}
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          limit-access-to-actor: true
 
   integration-test:
     needs: test
